@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LLBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtTaille"
+            style="@style/text_style_body_info"
+            android:text="votre taille (en cm)"
+            app:layout_constraintEnd_toStartOf="@+id/edtTaille"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtTaille"
+            style="@style/editText_style_body_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="number"/>
+
+
+        <TextView
+            android:id="@+id/txtPoids"
+            style="@style/text_style_body_info"
+            android:text="votre poid (en kg)"
+            app:layout_constraintEnd_toStartOf="@+id/edtPoids"
+            app:layout_constraintTop_toBottomOf="@+id/txtTaille" />
+
+        <EditText
+            android:id="@+id/edtPoids"
+            style="@style/editText_style_body_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTaille"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/txtAge"
+            style="@style/text_style_body_info"
+            android:text="votre age"
+            app:layout_constraintEnd_toStartOf="@+id/edtAge"
+            app:layout_constraintTop_toBottomOf="@+id/txtPoids" />
+
+        <EditText
+            android:id="@+id/edtAge"
+            style="@style/editText_style_body_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPoids"
+            android:inputType="number"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LLBody">
+
+        <RadioButton
+            android:id="@+id/rdbHomme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Homme" />
+
+        <RadioButton
+            android:id="@+id/rdbFemme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Femme" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCalculateIMG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        android:text="Calculer IMG" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculateIMG"
+        >
+
+        <TextView
+            android:id="@+id/lblResultat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Votre IMC sera affiché ici" />
+
+        <TextView
+            android:id="@+id/lblInterpretation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Interpretation en cours.." />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    android:clickable = "false"-->
